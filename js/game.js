@@ -13,6 +13,8 @@ class Game {
 		
 	}
 	preload() {
+
+
 		this.backgroundImages = [
 			{ src: loadImage('/assets/background/Nebula Aqua-Pink2.png'), x: 0, speed: 0, },
 			{ src: loadImage('/assets/background/Stars Small_1.png'), x: 0, speed: 1 },
@@ -29,20 +31,10 @@ class Game {
 	draw() {
 
 		clear()
-							// console.log('drawing')
+	
 		this.background.draw()
 		this.player.draw()
-							// every x frames we want to push a new coin into the array 
-							// console.log(frameCount)
-		
-		
-		// if (keyIsDown(32)){
-			// 
-		// console.log('fire')
-		// if (frameCount % 20 === 0){
-		// this.bullet.push(new Bullet(this.bulletImage,this.player.x, this.player.y))
-		// }
-	// }	
+
 		this.bullet.forEach(function (bullet) {
 		bullet.draw()
 		})
@@ -53,18 +45,33 @@ class Game {
 		}
 		this.meteor.forEach(function (meteor) {
 			meteor.draw()
-		})
-							// we need an arrow function here so that 'this' has the right context 
-							// (that of the game object)
+		}) 
+	
 		this.meteor = this.meteor.filter(meteor => {
-			// console.log(this)
-			if (meteor.collision(this.player) || meteor.x < 0) {
-				
+			for (let i=0;i<this.bullet.length; i++){
+				if (meteor.collision2(this.bullet[i]) || meteor.y> 800) {	
 				return false
 			} else {
 				return true
 			}
+		}
+		return true;
 		})
+
+		// this.meteor = this.meteor.filter(meteor => {
+			// if (meteor.collision(this.player) || meteor.y>800) {	
+				// return false
+			// } else {
+				// return true
+			// }
+		// })
+
+		fill(255)
+		textSize(50)
+		text(game.player.score, 450,60)
+
+
+		
 	}
 
 }

@@ -9,8 +9,17 @@ class Bullet {
 	
 		draw() {
 			
-			this.y--
+			this.y-=7
 	
 			image(this.image, this.x, this.y, this.width, this.height)
 }
 }
+
+
+function keyPressed() {
+	if (keyCode === 32) {
+		game.bullet.push(new Bullet(game.bulletImage,game.player.x, game.player.y))
+	}
+
+}
+ 

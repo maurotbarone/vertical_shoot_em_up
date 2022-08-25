@@ -14,15 +14,6 @@ class Background {
 		if (img.y >= height) img.y = 0
 		
 		
-		
-		
-		// game.backgroundImages.forEach(function (img) {
-		// img.x -= img.speed
-			// image(img.src, img.x, 0, width, height)
-		//	here we add a second image
-		//image(img.src, img.x + width, 0, width, height)
-		//	when the image leaves the screen we replace it to the starting position
-		// if (img.x <= - width) img.x = 0
 	})
 }
 }
