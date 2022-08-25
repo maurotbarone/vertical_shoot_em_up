@@ -8,7 +8,7 @@ class Meteor {
 	}
 
 	draw() {
-		this.y+=5
+		this.y+=3
 		image(this.image, this.x, this.y, this.width, this.height)
 	}
 
@@ -44,6 +44,7 @@ collision2(bulletInfo){
 			
 			else {
 				game.player.score+=100
+				game.crash.play()
 				return true
 		}
 

@@ -19,6 +19,7 @@ class Bullet {
 function keyPressed() {
 	if (keyCode === 32) {
 		game.bullet.push(new Bullet(game.bulletImage,game.player.x, game.player.y))
+		game.laser.play()
 	}
 
 }

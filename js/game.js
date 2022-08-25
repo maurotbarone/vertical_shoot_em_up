@@ -10,9 +10,17 @@ class Game {
 		this.bulletImage
 		this.meteor = []
 		this.meteorImage
+
+		this.crash
+		this.laser
+		this.music
 		
 	}
 	preload() {
+		this.crash=loadSound('/assets/player/mixkit-falling-hit-757.wav')
+		this.laser=loadSound('/assets/player/mixkit-short-laser-gun-shot-1670.wav')
+
+		this.music=loadSound('/assets/player/spaceship shooter .mp3')
 
 
 		this.backgroundImages = [
@@ -24,7 +32,8 @@ class Game {
 		]
 
 		this.playerImage = loadImage('/assets/player/playerShip1_red.png')
-		this.meteorImage = loadImage('/assets/player/enemies/8.png')
+		this.meteorImage = loadImage('/assets/player/enemies/13.png')
+
 		this.bulletImage = loadImage('/assets/player/laserBlue01.png') 
 
 	}
@@ -39,7 +48,7 @@ class Game {
 		bullet.draw()
 		})
 
-		if (frameCount % 20 === 0) {
+		if (frameCount % 30 === 0) {
 			this.meteor.push(new Meteor(this.meteorImage))
 							// console.log(this.obstacles)
 		}
@@ -50,10 +59,12 @@ class Game {
 		this.meteor = this.meteor.filter(meteor => {
 			for (let i=0;i<this.bullet.length; i++){
 				if (meteor.collision2(this.bullet[i]) || meteor.y> 800) {	
+					
 				return false
 			
 			}
 		}
+		
 		return true;
 		})
 

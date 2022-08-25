@@ -1,5 +1,4 @@
- 
-const game = new Game()
+ const game = new Game()
 
 function preload() {
 	game.preload()
@@ -7,6 +6,10 @@ function preload() {
 
 function setup() {
 	createCanvas(600, 800)
+	
+	game.music.setVolume(0.5)
+	game.music.play()
+
 	
 }
 
