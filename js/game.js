@@ -24,7 +24,7 @@ class Game {
 		]
 
 		this.playerImage = loadImage('/assets/player/playerShip1_red.png')
-		this.meteorImage = loadImage('/assets/meteor/meteorBrown_big1.png')
+		this.meteorImage = loadImage('/assets/player/enemies/8.png')
 		this.bulletImage = loadImage('/assets/player/laserBlue01.png') 
 
 	}
@@ -39,7 +39,7 @@ class Game {
 		bullet.draw()
 		})
 
-		if (frameCount % 90 === 0) {
+		if (frameCount % 20 === 0) {
 			this.meteor.push(new Meteor(this.meteorImage))
 							// console.log(this.obstacles)
 		}
@@ -51,20 +51,19 @@ class Game {
 			for (let i=0;i<this.bullet.length; i++){
 				if (meteor.collision2(this.bullet[i]) || meteor.y> 800) {	
 				return false
-			} else {
-				return true
+			
 			}
 		}
 		return true;
 		})
 
-		// this.meteor = this.meteor.filter(meteor => {
-			// if (meteor.collision(this.player) || meteor.y>800) {	
-				// return false
-			// } else {
-				// return true
-			// }
-		// })
+		this.meteor = this.meteor.filter(meteor => {
+		if (meteor.collision(this.player) || meteor.y>800) {	
+			return false
+			} else {
+				return true
+			}
+		})
 
 		fill(255)
 		textSize(50)

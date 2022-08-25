@@ -1,14 +1,14 @@
 class Meteor {
 	constructor(image) {
 		this.image = image
-		this.x=(Math.random() * 523)
-		this.y=0
-		this.width = 100
-		this.height = 100
+		this.x=(Math.random() * 500)
+		this.y=-100
+		this.width = 60
+		this.height = 75
 	}
 
 	draw() {
-		this.y++
+		this.y+=5
 		image(this.image, this.x, this.y, this.width, this.height)
 	}
 
@@ -24,7 +24,7 @@ collision(playerInfo) {
 			return false
 		} else {
 		
-			game.player.score+=100
+			game.player.score-=200
 		
 			return true
 		} 
@@ -41,8 +41,13 @@ collision2(bulletInfo){
 			if(dist(meteorX,meteorY, bulletX, bulletY)>65) {
 				return false
 			} 
-			else return true
+			
+			else {
+				game.player.score+=100
+				return true
 		}
+
+}
 
 }
 
