@@ -17,24 +17,24 @@ class Game {
 		
 	}
 	preload() {
-		this.crash=loadSound('/assets/player/mixkit-falling-hit-757.wav')
-		this.laser=loadSound('/assets/player/mixkit-short-laser-gun-shot-1670.wav')
+		this.crash=loadSound('../assets/player/mixkit-falling-hit-757.wav')
+		this.laser=loadSound('../assets/player/mixkit-short-laser-gun-shot-1670.wav')
 
-		this.music=loadSound('/assets/player/spaceship shooter .mp3')
+		this.music=loadSound('../assets/player/spaceship shooter .mp3')
 
 
 		this.backgroundImages = [
-			{ src: loadImage('/assets/background/Nebula Aqua-Pink2.png'), x: 0, speed: 0, },
-			{ src: loadImage('/assets/background/Stars Small_1.png'), x: 0, speed: 1 },
-			{ src: loadImage('/assets/background/Stars Small_2.png'), y: 0, speed: 1 },
-			{ src: loadImage('/assets/background/Stars-Big_1_1_PC.png'), x: 0, speed: 1 },
-			{ src: loadImage('/assets/background/Stars-Big_1_2_PC.png'), y: 0, speed: 2}
+			{ src: loadImage('../assets/background/Nebula Aqua-Pink2.png'), x: 0, speed: 0, },
+			{ src: loadImage('../assets/background/Stars Small_1.png'), x: 0, speed: 1 },
+			{ src: loadImage('../assets/background/Stars Small_2.png'), y: 0, speed: 1 },
+			{ src: loadImage('../assets/background/Stars-Big_1_1_PC.png'), x: 0, speed: 1 },
+			{ src: loadImage('../assets/background/Stars-Big_1_2_PC.png'), y: 0, speed: 2}
 		]
 
-		this.playerImage = loadImage('/assets/player/playerShip1_red.png')
-		this.meteorImage = loadImage('/assets/player/enemies/13.png')
+		this.playerImage = loadImage('../assets/player/playerShip1_red.png')
+		this.meteorImage = loadImage('../assets/player/enemies/13.png')
 
-		this.bulletImage = loadImage('/assets/player/laserBlue01.png') 
+		this.bulletImage = loadImage('../assets/player/laserBlue01.png') 
 
 	}
 	draw() {
